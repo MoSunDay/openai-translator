@@ -4,7 +4,7 @@ import { BaseDirectory, writeTextFile } from '@tauri-apps/api/fs'
 import { IBrowser, ISettings } from './types'
 import { getUniversalFetch } from './universal-fetch'
 
-export const defaultAPIURL = 'https://api.openai.com'
+export const defaultAPIURL = 'https://anygpt.woa.com/api/v1/gpt'
 export const defaultAPIURLPath = '/v1/chat/completions'
 export const defaultProvider = 'OpenAI'
 export const defaultAPIModel = 'gpt-3.5-turbo'

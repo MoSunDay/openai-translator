@@ -925,24 +925,8 @@ export function Settings(props: IPopupProps) {
                         }}
                         data-tauri-drag-region
                     >
-                        <img width='22' src={icon} alt='logo' />
                         <h2>
                             OpenAI Translator
-                            {AppConfig?.version ? (
-                                <a
-                                    href='https://github.com/yetone/openai-translator/releases'
-                                    target='_blank'
-                                    rel='noreferrer'
-                                    style={{
-                                        fontSize: '0.65em',
-                                        marginLeft: '5px',
-                                        color: 'unset',
-                                        textDecoration: 'none',
-                                    }}
-                                >
-                                    {AppConfig.version}
-                                </a>
-                            ) : null}
                         </h2>
                     </nav>
                     <Form
@@ -956,58 +940,6 @@ export function Settings(props: IPopupProps) {
                     >
                         <FormItem name='provider' label={t('Default Service Provider')}>
                             <ProviderSelector />
-                        </FormItem>
-                        {values.provider !== 'ChatGPT' && (
-                            <FormItem
-                                required
-                                name='apiKeys'
-                                label={t('API Key')}
-                                caption={
-                                    <div>
-                                        {t('Go to the')}{' '}
-                                        {values.provider === 'Azure' ? (
-                                            <a
-                                                target='_blank'
-                                                href='https://learn.microsoft.com/en-us/azure/cognitive-services/openai/chatgpt-quickstart?tabs=command-line&pivots=rest-api#retrieve-key-and-endpoint'
-                                                rel='noreferrer'
-                                            >
-                                                {t('Azure OpenAI Service page')}
-                                            </a>
-                                        ) : (
-                                            <a
-                                                target='_blank'
-                                                href='https://platform.openai.com/account/api-keys'
-                                                rel='noreferrer'
-                                            >
-                                                {t('OpenAI page')}
-                                            </a>
-                                        )}{' '}
-                                        {t(
-                                            'to get your API Key. You can separate multiple API Keys with English commas to achieve quota doubling and load balancing.'
-                                        )}
-                                    </div>
-                                }
-                            >
-                                <Input autoFocus type='password' size='compact' onBlur={onBlur} />
-                            </FormItem>
-                        )}
-                        {values.provider !== 'Azure' && (
-                            <FormItem name='apiModel' label={t('API Model')}>
-                                <APIModelSelector provider={values.provider} onBlur={onBlur} />
-                            </FormItem>
-                        )}
-                        {values.provider !== 'ChatGPT' && (
-                            <>
-                                <FormItem required name='apiURL' label={t('API URL')}>
-                                    <Input size='compact' onBlur={onBlur} />
-                                </FormItem>
-                                <FormItem required name='apiURLPath' label={t('API URL Path')}>
-                                    <Input size='compact' />
-                                </FormItem>
-                            </>
-                        )}
-                        <FormItem name='defaultTranslateMode' label={t('Default Translate Mode')}>
-                            <TranslateModeSelector onBlur={onBlur} />
                         </FormItem>
                         <FormItem name='alwaysShowIcons' label={t('Show icon when text is selected')}>
                             <AlwaysShowIconsCheckbox onBlur={onBlur} />
