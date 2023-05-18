@@ -1209,11 +1209,6 @@ export function Translator(props: IPopupCardProps) {
                                     </div>
                                 </div>
                                 <div className={styles.popupCardContentContainer}>
-                                    {settings?.apiURL === defaultAPIURL && (
-                                        <div>
-                                            <IpLocationNotification />
-                                        </div>
-                                    )}
                                     <div ref={editorContainerRef} className={styles.popupCardEditorContainer}>
                                         <div
                                             style={{

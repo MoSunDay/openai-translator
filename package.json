@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-tauri-renderer": "node build-tauri.mjs",
+    "build-electron": "tsc && electron-builder",
     "dev-tauri-renderer": "node build-tauri.mjs --serve",
     "build-tauri": "tauri build",
     "dev-tauri": "tauri dev",
