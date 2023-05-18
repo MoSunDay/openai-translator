@@ -205,13 +205,12 @@ async function main() {
     })
 
     const settings = await utils.getSettings()
-
     await bindHotKey(settings.hotkey)
 }
 
 export async function bindHotKey(hotkey_: string | undefined) {
     const hotkey = hotkey_?.trim().replace(/-/g, '+')
-
+    console.log(hotkey)
     if (!hotkey) {
         return
     }

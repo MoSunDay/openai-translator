@@ -9,7 +9,7 @@ export default function IpLocationNotification() {
     // useEffect(() => {
     //     ;(async () => {
     //         setIpLocation(await getIpLocationInfo())
-    //     })()
+    //     })
     // }, [])
 
     // if (ipLocation === null || ipLocation.supported) return <></>
